@@ -1,51 +1,117 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Verve</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="./img/icon.png">
-  <link rel="apple-touch-icon" href="./img/icon.png">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <meta name="theme-color" content="#fafafa">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./img/icon.png" />
+  <link rel="apple-touch-icon" href="./img/icon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/slick.css" />
+  <link rel="stylesheet" href="./css/slick-theme.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <meta name="theme-color" content="#fafafa" />
 </head>
 
 <body>
-  <!-- Header section -->
-  <header class="header">
-    <a href="#" class="brand-logo"><img src="./img/logo.png" alt="Verse logo"></a>
-    <button class="menu-toggle-btn">
-      <span class="menu-icon-line1"></span>
-      <span class="menu-icon-line2"></span>
-      <span class="menu-icon-line3"></span>
-    </button>
-    <div class="header-btns">
-      <a href="#" class="info-btn"><i class="fas fa-info"></i></a>
-      <a id="full-screen-btn"><i id="full-screen-icon" class="fas fa-expand"></i></a>
-    </div>
-  </header>
+  <!-- nav menu -->
+  <nav class="side-menu">
+    <ul>
+      <li><a href="#">home</a></li>
+      <li><a href="#">our blog</a></li>
+      <li><a href="#">portfolio</a></li>
+      <li><a href="#">other pages</a></li>
+      <li><a href="#">verve shop</a></li>
+      <li><a href="#">contact us</a></li>
+      <li><a href="#">buy theme</a></li>
+    </ul>
+  </nav>
+  <div class="nav-overlay"></div>
 
-  <!-- Main -->
   <div class="container">
-    <nav class="side-menu">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">our blog</a></li>
-        <li><a href="#">portfolio</a></li>
-        <li><a href="#">other pages</a></li>
-        <li><a href="#">verve shop</a></li>
-        <li><a href="#">contact us</a></li>
-        <li><a href="#">buy theme</a></li>
-      </ul>
-    </nav>
-    <div class="main">main</div>
+    <!-- Header section -->
+    <header class="header">
+      <a href="#" class="brand-logo"><img src="./img/logo.png" alt="Verse logo" /></a>
+      <button class="menu-toggle-btn">
+        <span class="menu-icon-line1"></span>
+        <span class="menu-icon-line2"></span>
+        <span class="menu-icon-line3"></span>
+      </button>
+      <div class="header-btns">
+        <a href="#" class="info-btn"><i class="fas fa-info"></i></a>
+        <a id="full-screen-btn"><i id="full-screen-icon" class="fas fa-expand"></i></a>
+      </div>
+    </header>
+    <!-- Main -->
+    <div class="main">
+      <div class="posts-slider">
+        <div class="slider-item">
+          <div class="post-item">
+            <img src="./img/slider-image1.jpg" alt="thumbnail">
+            <h3>rainy day</h3>
+            <p>urban, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <video src="./img/video2.mp4"></video>
+            <h3>hawaii surf</h3>
+            <p>digital, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <img src="./img/slider-image3.jpg" alt="thumbnail">
+            <h3>horse rider</h3>
+            <p>peaple, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <h3>going uphill</h3>
+            <img src="./img/slider-image2.jpg" alt="thumbnail">
+            <p>gipster, wintage</p>
+            <a href="#">read more</a>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="post-item">
+            <img src="./img/slider-image4.jpg" alt="thumbnail">
+            <h3>urban feel</h3>
+            <p>stills, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <video src="./img/video1.mp4"></video>
+            <h3>ny city</h3>
+            <p>stills, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <h3>alaskan project</h3>
+            <img src="./img/slider-image5.jpg" alt="thumbnail">
+            <p>stills, vintage</p>
+            <a href="#">read more</a>
+          </div>
+          <div class="post-item">
+            <h3>burners time</h3>
+            <img src="./img/slider-image6.jpg" alt="thumbnail">
+            <p>stills, vintage</p>
+            <a href="#">read more</a>
+          </div>
+        </div>
+      </div>
+      <i class="fas fa-chevron-left slider-arrow slider-arrow-left"></i>
+      <i class="fas fa-chevron-right slider-arrow slider-arrow-right"></i>
+      <div class="slider-background">
+        <img src="./img/slider-image1.jpg" alt="thumbnail" class="thumbnail-img">
+        <video autoplay loop class="thumbnail-video" src="./img/video1.mp4"></video>
+      </div>
+    </div>
   </div>
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/vendor/jquery.min.js"></script>
+  <script src="./js/vendor/slick.min.js"></script>
   <script src="js/main.js"></script>
-
 </body>
+
 </html>

@@ -1,38 +1,4 @@
-@font-face {
-  font-family: "Droid Serif";
-  src: url("../fonts/DroidSerif-BoldItalic.woff2") format("woff2"),
-    url("../fonts/DroidSerif-BoldItalic.woff") format("woff");
-  font-weight: bold;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Droid Serif";
-  src: url("../fonts/DroidSerif-Italic.woff2") format("woff2"),
-    url("../fonts/DroidSerif-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Droid Serif";
-  src: url("../fonts/DroidSerif-Bold.woff2") format("woff2"),
-    url("../fonts/DroidSerif-Bold.woff") format("woff");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Droid Serif";
-  src: url("../fonts/DroidSerif.woff2") format("woff2"),
-    url("../fonts/DroidSerif.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap");
 
 * {
   padding: 0;
@@ -41,18 +7,24 @@
 }
 
 body {
-  font-family: "Droid Serif";
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 .header {
   background-color: #111111;
   padding: 10px 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
+  z-index: 5;
 }
 .header .brand-logo img {
   height: 70px;
@@ -82,6 +54,7 @@ body {
   background: transparent;
   cursor: pointer;
   background: transparent;
+  padding: 15px 3px;
 }
 .menu-toggle-btn span {
   min-width: 30px;
@@ -113,43 +86,192 @@ body {
   right: 0;
 }
 
-.container {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 93px;
-}
-
 .side-menu {
-  height: 100%;
+  height: 100vh;
   width: 300px;
+  position: absolute;
+  left: 0;
+  top: 0;
   min-width: 300px;
-  margin-left: -300px;
   transition: 0.3s all;
-  transition-timing-function: ease-in;
+  transform: translateX(-300px);
   overflow: hidden;
   display: flex;
   align-items: center;
   background-color: #171717;
+  z-index: 5;
+  padding-top: 94px;
 }
-.side-menu.active {
-  margin-left: 0;
-}
-.side-menu ul{
-  list-style: none;
-  padding: 10px;
+.nav-overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1111118a;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  transition: 0.3s all;
 }
 
-.side-menu ul a{
+.side-menu ul {
+  list-style: none;
+  padding: 15px;
+}
+
+.side-menu ul a {
   text-decoration: none;
   color: #ffffff;
-  font-weight: bold;
-  font-size: 24px;
-  padding: 5px 30px 5px 10px;
+  font-weight: 500;
+  font-size: 22px;
+  padding: 3px 20px;
+  text-transform: uppercase;
+  display: block;
+  transition: 0.3s all;
+}
+.side-menu ul a:hover {
+  color: #3eb5de;
 }
 
 .main {
+  position: relative;
+  transition: 0.3s all;
+  background-color: #888888;
+  width: 100vw;
+  max-width: 100vw;
   height: 100%;
+  flex: 1;
+}
+
+.sidebar-active .main {
+  margin-left: 300px;
+}
+.sidebar-active .nav-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+.sidebar-active .side-menu {
+  transform: translateX(0);
+}
+.sidebar-active .menu-icon-line2 {
+  margin-block: 0;
+  display: none;
+}
+.sidebar-active .menu-icon-line1 {
+  transform: rotate(45deg);
+  margin-bottom: -4px;
+}
+.sidebar-active .menu-icon-line3 {
+  transform: rotate(-45deg);
+  margin-top: -4px;
+}
+
+.thumbnail-img {
   width: 100%;
-  float: 1;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.thumbnail-video {
+  min-width: 100%;
+  min-height: 100%;
+  display: none;
+}
+.main .posts-slider {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: stretch;
+}
+.slider-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.slick-track {
+  height: 100% !important;
+}
+.slider-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 35px;
+  cursor: pointer;
+  color: #ffffff;
+}
+.slider-arrow-left{
+  left: 30px;
+}
+.slider-arrow-right{
+  right: 30px;
+}
+.slider-item{
+  display: flex !important;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+.post-item{
+  width: 25%;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.post-item:not(:last-child){
+  border-right: 1px solid #ffffff4d;
+}
+.post-item h3{
+  color: #ffffff;
+  text-transform: capitalize;
+  font-size: 25px;
+  transform: translateY(60px);
+  transition: 0.5s all;
+}
+.post-item p{
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-top: 6px;
+  transform: translateY(60px);
+  transition: 0.5s all;
+}
+.post-item img{
+  display: none;
+}
+.post-item video{
+  display: none;
+}
+.post-item a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 15px;
+  margin-top: 15px;
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: 0.5s all;
+  visibility: hidden;
+}
+.post-item:hover h3{
+  transform: translateY(0);
+}
+.post-item:hover p{
+  transform: translateY(0);
+}
+.post-item:hover a{
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
