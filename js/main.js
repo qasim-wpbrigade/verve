@@ -27,27 +27,36 @@ $(document).ready(function () {
   // slider
   $('.posts-slider').slick({
     infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    dots: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     prevArrow: ".slider-arrow-left",
     nextArrow: ".slider-arrow-right",
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
   });
 
-  // change slider background
-  $('.post-item').hover(function(){
-    let img_src = $(this).children('img').attr('src');
-    let video_src = $(this).children('video').attr('src');
-    if(img_src){
-      $(".thumbnail-img").css("display","block");
-      $(".thumbnail-video").css("display","none");
-      $(".thumbnail-img").attr("src",img_src);
-    }
-    if(video_src){
-      console
-      $(".thumbnail-img").css("display","none");
-      $(".thumbnail-video").css("display","block");
-      $(".thumbnail-video").attr("src",video_src);
-    }
-  });
 });
 
+ // change slider background
+ function sliderbackground(src,type){
+  if(type === "image"){
+    $(".thumbnail-img").css({display: 'block'});
+    $(".thumbnail-video").css({display: 'none'});
+    $(".thumbnail-img").attr("src",src);
+  }
+  if(type === "video"){
+    $(".thumbnail-img").css({display: 'none'});
+    $(".thumbnail-video").css({display: 'block'});
+    $(".thumbnail-video").attr("src",src);
+    document.getElementById('backvideo').play();
+  }
+}

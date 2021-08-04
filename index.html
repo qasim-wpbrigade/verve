@@ -46,64 +46,52 @@
     <!-- Main -->
     <div class="main">
       <div class="posts-slider">
-        <div class="slider-item">
-          <div class="post-item">
-            <img src="./img/slider-image1.jpg" alt="thumbnail">
-            <h3>rainy day</h3>
-            <p>urban, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <video src="./img/video2.mp4"></video>
-            <h3>hawaii surf</h3>
-            <p>digital, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <img src="./img/slider-image3.jpg" alt="thumbnail">
-            <h3>horse rider</h3>
-            <p>peaple, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <h3>going uphill</h3>
-            <img src="./img/slider-image2.jpg" alt="thumbnail">
-            <p>gipster, wintage</p>
-            <a href="#">read more</a>
-          </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image1.jpg','image')">
+          <h3>rainy day</h3>
+          <p>urban, vintage</p>
+          <a href="#">read more</a>
         </div>
-        <div class="slider-item">
-          <div class="post-item">
-            <img src="./img/slider-image4.jpg" alt="thumbnail">
-            <h3>urban feel</h3>
-            <p>stills, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <video src="./img/video1.mp4"></video>
-            <h3>ny city</h3>
-            <p>stills, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <h3>alaskan project</h3>
-            <img src="./img/slider-image5.jpg" alt="thumbnail">
-            <p>stills, vintage</p>
-            <a href="#">read more</a>
-          </div>
-          <div class="post-item">
-            <h3>burners time</h3>
-            <img src="./img/slider-image6.jpg" alt="thumbnail">
-            <p>stills, vintage</p>
-            <a href="#">read more</a>
-          </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/video2.mp4','video')">
+          <h3>hawaii surf</h3>
+          <p>digital, vintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image3.jpg','image')">
+          <h3>horse rider</h3>
+          <p>peaple, vintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image2.jpg','image')">
+          <h3>going uphill</h3>
+          <p>gipster, wintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image4.jpg','image')">
+          <h3>urban feel</h3>
+          <p>stills, vintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/video1.mp4','video')">
+          <h3>ny city</h3>
+          <p>stills, vintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image5.jpg','image')">
+          <h3>alaskan project</h3>
+          <p>stills, vintage</p>
+          <a href="#">read more</a>
+        </div>
+        <div class="post-item" onmouseover="sliderbackground('./img/slider-image6.jpg','image')">
+          <h3>burners time</h3>
+          <p>stills, vintage</p>
+          <a href="#">read more</a>
         </div>
       </div>
       <i class="fas fa-chevron-left slider-arrow slider-arrow-left"></i>
       <i class="fas fa-chevron-right slider-arrow slider-arrow-right"></i>
       <div class="slider-background">
         <img src="./img/slider-image1.jpg" alt="thumbnail" class="thumbnail-img">
-        <video autoplay loop class="thumbnail-video" src="./img/video1.mp4"></video>
+        <video autoplay loop muted class="thumbnail-video" id="backvideo"></video>
       </div>
     </div>
   </div>

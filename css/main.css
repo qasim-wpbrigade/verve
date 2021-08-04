@@ -58,6 +58,7 @@ body {
 }
 .menu-toggle-btn span {
   min-width: 30px;
+  border-radius: 5px;
   display: block;
   height: 4px;
   background-color: #ffffff;
@@ -71,6 +72,7 @@ body {
   width: 0%;
   height: 4px;
   background-color: #3eb5de;
+  border-radius: 10px;
   transition: 0.3s all;
 }
 .menu-toggle-btn:hover span::after {
@@ -78,9 +80,6 @@ body {
 }
 .menu-toggle-btn .menu-icon-line2 {
   margin-block: 6px;
-}
-.menu-toggle-btn:hover .menu-icon-line2 {
-  margin-block: 3px;
 }
 .menu-toggle-btn .menu-icon-line2:after {
   right: 0;
@@ -93,7 +92,7 @@ body {
   left: 0;
   top: 0;
   min-width: 300px;
-  transition: 0.3s all;
+  transition: 0.3s ease-in-out;
   transform: translateX(-300px);
   overflow: hidden;
   display: flex;
@@ -105,7 +104,7 @@ body {
 .nav-overlay {
   width: 100vw;
   height: 100vh;
-  background-color: #1111118a;
+  background-color: #111111c9;
   position: absolute;
   opacity: 0;
   visibility: hidden;
@@ -136,7 +135,7 @@ body {
 
 .main {
   position: relative;
-  transition: 0.3s all;
+  transition: 0.3s ease-in-out;
   background-color: #888888;
   width: 100vw;
   max-width: 100vw;
@@ -156,7 +155,11 @@ body {
 }
 .sidebar-active .menu-icon-line2 {
   margin-block: 0;
-  display: none;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.sidebar-active .menu-icon-line2 {
+  margin-block: 0px;
 }
 .sidebar-active .menu-icon-line1 {
   transform: rotate(45deg);
@@ -174,8 +177,9 @@ body {
   z-index: 0;
 }
 .thumbnail-video {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: none;
 }
 .main .posts-slider {
@@ -210,22 +214,14 @@ body {
 .slider-arrow-right{
   right: 30px;
 }
-.slider-item{
-  display: flex !important;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  flex-wrap: nowrap;
-}
 .post-item{
-  width: 25%;
   cursor: pointer;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
   padding: 30px;
-  align-items: flex-start;
+  align-items: flex-start !important;
   overflow: hidden;
 }
 .post-item:not(:last-child){
@@ -244,12 +240,6 @@ body {
   margin-top: 6px;
   transform: translateY(60px);
   transition: 0.5s all;
-}
-.post-item img{
-  display: none;
-}
-.post-item video{
-  display: none;
 }
 .post-item a{
   text-decoration: none;
