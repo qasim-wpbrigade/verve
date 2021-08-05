@@ -34,13 +34,17 @@ $(document).ready(function () {
     nextArrow: ".slider-arrow-right",
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 765,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: false,
         },
       },
+      {
+        breakpoint: 600,
+        settings: "unslick"
+      }
     ],
   });
 
